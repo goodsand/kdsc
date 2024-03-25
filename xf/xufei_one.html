@@ -19,7 +19,7 @@ $(function ()
 {
 function buypost(e) {
 
-	ajaxPost('1000.php', e, function (data) {
+	ajaxPost('https://api-kdsc.zeabur.app/msg', e, function (data) {
         if (data.ErrorCode == 0) {
 			
 		console.log(data);
@@ -76,7 +76,7 @@ $("#buy").click(function ()
 if($("#name").val()&&$("#phone").val()){
 	$.ajax({
 		type : "post",
-		url : "1000.php",
+		url : "https://api-kdsc.zeabur.app/msg",
 		data : postdata,
 		async : false,
 		dataType : "json",
@@ -86,7 +86,11 @@ if($("#name").val()&&$("#phone").val()){
 			},
 		success : function(data) {
 			console.log(data);
-			popmsg(0,data.msg);
+			if(data.errcode==0){
+				popmsg(0,"预受理成功，请保持联电畅通，中台营业员正在为您办理，成功后会下发短信支付链接，请您留意。此页面可以直接关闭。");
+			}else{
+				popmsg(0,"预受理失败[提交失败]，请稍后重试！");
+			}
 			}
 		});
 
@@ -450,7 +454,7 @@ time, mark, audio, video {
 
         <div class="upData">
             <div class="header">
-                <img src="http://10010.bjkdsc.top/xf/img/logo.png" alt="中国联通">
+                <img src="img/logo.png" alt="中国联通">
                 北京联通宽带续费办理
             </div>
             <div class="form">
