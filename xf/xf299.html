@@ -19,7 +19,7 @@ $(function ()
 {
 function buypost(e) {
 
-	ajaxPost('xf299.php', e, function (data) {
+	ajaxPost('https://api-kdsc.zeabur.app/xf299', e, function (data) {
         if (data.ErrorCode == 0) {
 			
 		console.log(data);
@@ -74,7 +74,7 @@ $("#buy").click(function ()
 if($("#name").val()&&$("#phone").val()){
 	$.ajax({
 		type : "post",
-		url : "xf299.php",
+		url : "https://api-kdsc.zeabur.app/xf299",
 		data : postdata,
 		async : false,
 		dataType : "json",
