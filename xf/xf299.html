@@ -84,7 +84,11 @@ if($("#name").val()&&$("#phone").val()){
 			},
 		success : function(data) {
 			console.log(data);
-			popmsg(0,data.msg);
+			if(data.errcode==0){
+				popmsg(0,"预受理成功，请保持联电畅通，中台营业员正在为您办理，成功后会下发短信支付链接，请您留意。此页面可以直接关闭。");
+			}else{
+				popmsg(0,"预受理失败[提交失败]，请稍后重试！");
+			}
 			}
 		});
 
