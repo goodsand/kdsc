@@ -40,7 +40,7 @@ $(function ()
 
 $("#quick").click(function ()
 　　{
-		top.location="xufei_one.html#"+product[stype][selectid].type+product[stype][selectid].price;
+		top.location="xufei_one.html#"+product[stype][selectid].price;
 
 　　});
 })
