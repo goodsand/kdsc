@@ -24,7 +24,7 @@ $(function ()
 		$("#sales").text(product[stype][index].sales);
 		$("#store").text(product[stype][index].store);
 		if(index<2){
-			$("#hd").text("宽带网龄5年以上老用户，299元一次性费用优惠至99元");
+			$("#hd").text("");
 		}else{
 			$("#hd").text("");
 		}
